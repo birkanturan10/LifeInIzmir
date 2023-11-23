@@ -4,6 +4,21 @@
     "C:\\Users\\birka\\Desktop\\İ - Akademi Kurs ve Yazılım Projeleri\\Projelerim\\LifeInIzmir\\UI\\UI.csproj": {}
   },
   "projects": {
+    "C:\\Users\\birka\\Desktop\\İ - Akademi Kurs ve Yazılım Projeleri\\Projelerim\\LifeInIzmir\\TypeLayer\\TypeLayer.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\birka\\Desktop\\İ - Akademi Kurs ve Yazılım Projeleri\\Projelerim\\LifeInIzmir\\TypeLayer\\TypeLayer.csproj",
+        "projectName": "TypeLayer",
+        "projectPath": "C:\\Users\\birka\\Desktop\\İ - Akademi Kurs ve Yazılım Projeleri\\Projelerim\\LifeInIzmir\\TypeLayer\\TypeLayer.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
     "C:\\Users\\birka\\Desktop\\İ - Akademi Kurs ve Yazılım Projeleri\\Projelerim\\LifeInIzmir\\UI\\UI.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -32,7 +47,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\birka\\Desktop\\İ - Akademi Kurs ve Yazılım Projeleri\\Projelerim\\LifeInIzmir\\TypeLayer\\TypeLayer.csproj": {
+                "projectPath": "C:\\Users\\birka\\Desktop\\İ - Akademi Kurs ve Yazılım Projeleri\\Projelerim\\LifeInIzmir\\TypeLayer\\TypeLayer.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

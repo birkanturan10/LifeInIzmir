@@ -1,0 +1,13 @@
+﻿* {
+    font-family: 'Poppins',sans-serif;
+}
+
+
+body {
+    background: rgb(148,157,202);
+    background: radial-gradient(circle, rgba(148,157,202,1) 13%, rgba(148,90,133,1) 54%, rgba(215,147,168,1) 67%);
+}
+
+.container{
+    border-radius:25px;
+}

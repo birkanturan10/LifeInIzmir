@@ -249,6 +249,10 @@
       "PackagePath": "staticwebassets\\pictures\\izmir.jpg"
     },
     {
+      "Id": "C:\\Users\\birka\\Desktop\\İ - Akademi Kurs ve Yazılım Projeleri\\Projelerim\\LifeInIzmir\\UI\\wwwroot\\style_sheets\\ApiSheet.css",
+      "PackagePath": "staticwebassets\\style_sheets\\ApiSheet.css"
+    },
+    {
       "Id": "C:\\Users\\birka\\Desktop\\İ - Akademi Kurs ve Yazılım Projeleri\\Projelerim\\LifeInIzmir\\UI\\wwwroot\\style_sheets\\HomeSheet.css",
       "PackagePath": "staticwebassets\\style_sheets\\HomeSheet.css"
     },

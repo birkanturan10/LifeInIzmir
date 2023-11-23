@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "434UcrMSYX3a826msRI9DdHzsVJS1J2KBSNrUO4SrCs=",
+  "Hash": "SOjdR4NrA9KHjvGA5trid8U8GOyhFzb34RO4j74GkOI=",
   "Source": "UI",
   "BasePath": "_content/UI",
   "Mode": "Default",
@@ -1086,6 +1086,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\pictures\\izmir.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\birka\\Desktop\\İ - Akademi Kurs ve Yazılım Projeleri\\Projelerim\\LifeInIzmir\\UI\\wwwroot\\style_sheets\\ApiSheet.css",
+      "SourceId": "UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\birka\\Desktop\\İ - Akademi Kurs ve Yazılım Projeleri\\Projelerim\\LifeInIzmir\\UI\\wwwroot\\",
+      "BasePath": "_content/UI",
+      "RelativePath": "style_sheets/ApiSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\style_sheets\\ApiSheet.css"
     },
     {
       "Identity": "C:\\Users\\birka\\Desktop\\İ - Akademi Kurs ve Yazılım Projeleri\\Projelerim\\LifeInIzmir\\UI\\wwwroot\\style_sheets\\HomeSheet.css",

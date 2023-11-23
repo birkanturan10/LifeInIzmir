@@ -223,3 +223,5 @@ C:\Users\birka\Desktop\İ - Akademi Kurs ve Yazılım Projeleri\Projelerim\LifeI
 C:\Users\birka\Desktop\İ - Akademi Kurs ve Yazılım Projeleri\Projelerim\LifeInIzmir\UI\obj\Debug\net6.0\UI.pdb
 C:\Users\birka\Desktop\İ - Akademi Kurs ve Yazılım Projeleri\Projelerim\LifeInIzmir\UI\obj\Debug\net6.0\UI.genruntimeconfig.cache
 C:\Users\birka\Desktop\İ - Akademi Kurs ve Yazılım Projeleri\Projelerim\LifeInIzmir\UI\obj\Debug\net6.0\ref\UI.dll
+C:\Users\birka\Desktop\İ - Akademi Kurs ve Yazılım Projeleri\Projelerim\LifeInIzmir\UI\bin\Debug\net6.0\TypeLayer.dll
+C:\Users\birka\Desktop\İ - Akademi Kurs ve Yazılım Projeleri\Projelerim\LifeInIzmir\UI\bin\Debug\net6.0\TypeLayer.pdb

@@ -3267,6 +3267,15 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "TypeLayer/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/TypeLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TypeLayer.dll": {}
+        }
       }
     }
   },
@@ -9536,11 +9545,17 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "TypeLayer/1.0.0": {
+      "type": "project",
+      "path": "../TypeLayer/TypeLayer.csproj",
+      "msbuildProject": "../TypeLayer/TypeLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
+      "TypeLayer >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -9575,7 +9590,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\birka\\Desktop\\İ - Akademi Kurs ve Yazılım Projeleri\\Projelerim\\LifeInIzmir\\TypeLayer\\TypeLayer.csproj": {
+              "projectPath": "C:\\Users\\birka\\Desktop\\İ - Akademi Kurs ve Yazılım Projeleri\\Projelerim\\LifeInIzmir\\TypeLayer\\TypeLayer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

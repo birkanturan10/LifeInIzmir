@@ -12,12 +12,14 @@ body {
     grid-template-rows: 200px 200px 200px;
     grid-template-columns: 200px 200px 200px;
     row-gap: 0px;
-    column-gap: 40px;
+    column-gap: 70px;
     justify-content: center;
     align-items: center;
 }
 
 .box1 {
+    position:relative;
+    cursor: pointer;
     border: 2px solid rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
@@ -100,3 +102,12 @@ body {
     font-size: 18px;
     color:white;
 }
+
+.dr{
+    background-color:mediumpurple;
+}
+
+.tb{
+    padding-top:870px;
+}
+
