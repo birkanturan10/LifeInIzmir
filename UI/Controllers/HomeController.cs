@@ -19,36 +19,25 @@ namespace UI.Controllers
             return View(vapur);
         }
 
-		//	public async Task<IActionResult> TaksiDuraklari(int page = 1, int pageSize = 10)
-		//	{
-		//		using (HttpClient client = new HttpClient())
-		//		{
-		//			string apiUrl = "https://openapi.izmir.bel.tr/api/ibb/cbs/taksiduraklari";
-		//			HttpResponseMessage response = await client.GetAsync(apiUrl);
+		public async Task<IActionResult> TaksiDuraklari()
+		{
+			using (HttpClient client = new HttpClient())
+			{
+				string apiUrl = "https://openapi.izmir.bel.tr/api/ibb/cbs/taksiduraklari";
+				HttpResponseMessage response = await client.GetAsync(apiUrl);
 
-		//			if (response.IsSuccessStatusCode)
-		//			{
-		//				string content = await response.Content.ReadAsStringAsync();
-		//				var apiResponse = JsonConvert.DeserializeObject<Taksi>(content);
+				if (response.IsSuccessStatusCode)
+				{
+					string content = await response.Content.ReadAsStringAsync();
+					var taksi = JsonConvert.DeserializeObject<Taksi>(content);
 
-		//				// Veri setini sayfalamak için LINQ kullanabilirsiniz
-		//				var paginatedData = apiResponse.onemliyer
-		//					.Skip((page - 1) * pageSize)
-		//					.Take(pageSize)
-		//					.ToList();
-
-		//				// Sayfalama bilgilerini view'a ekleyin
-		//				ViewBag.PageNumber = page;
-		//				ViewBag.TotalPages = (int)Math.Ceiling((double)apiResponse.onemliyer.Count / pageSize);
-
-		//				return View(paginatedData);
-		//			}
-		//			else
-		//			{
-		//				return View("Error");
-		//			}
-		//		}
-		//	}
-		//
+					return View(taksi.onemliyer);
+				}
+				else
+				{
+					return View("Error");
+				}
+			}
+		}
 	}
 }
