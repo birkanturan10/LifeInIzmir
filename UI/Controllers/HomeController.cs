@@ -39,5 +39,26 @@ namespace UI.Controllers
 				}
 			}
 		}
+
+		public async Task<IActionResult> BisimIstasyonlari()
+		{
+			using (HttpClient client = new HttpClient())
+			{
+				string apiUrl = "https://openapi.izmir.bel.tr/api/izulas/bisim/istasyonlar";
+				HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+				if (response.IsSuccessStatusCode)
+				{
+					string content = await response.Content.ReadAsStringAsync();
+					var bisim = JsonConvert.DeserializeObject<Bisim>(content);
+
+					return View(bisim.stations);
+				}
+				else
+				{
+					return View("Error");
+				}
+			}
+		}
 	}
 }
