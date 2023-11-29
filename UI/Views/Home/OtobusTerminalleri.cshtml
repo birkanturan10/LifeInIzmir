@@ -1,0 +1,57 @@
+﻿@model IEnumerable<TypeLayer.Ulasim.Te>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Otobüs Terminalleri</title>
+	<!--Bootstrap Links-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	<!--ApiSheet.css-->
+	<link href="~/style_sheets/apisheet.css" rel="stylesheet" />
+</head>
+<body>
+	<!--Main Page Button-->
+	<button id="bottone1" onclick="openMainPage()"><strong>Ana Sayfa</strong></button>
+	<!--Navbar-->
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-md  d-flex justify-content-center">
+			<a class="navbar-brand">İzmir'de Ulaşım</a>
+		</div>
+	</nav>
+	<!--Table-->
+	<div class="container">
+		<table class="table table-light">
+			<thead>
+				<tr>
+					<th>İlçe</th>
+					<th>Mahalle</th>
+					<th>Terminal Adı</th>
+				</tr>
+			</thead>
+			<tbody id="myTable">
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>@item.ILCE</td>
+						<td>@item.MAHALLE</td>
+						<td>@item.ADI</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
+
+<script>
+	function openMainPage() {
+		window.open("/Home/Index", "_self");
+	}
+</script>

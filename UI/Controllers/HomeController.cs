@@ -60,5 +60,26 @@ namespace UI.Controllers
 				}
 			}
 		}
+
+		public async Task<IActionResult> OtobusTerminalleri()
+		{
+			using (HttpClient client = new HttpClient())
+			{
+				string apiUrl = "https://openapi.izmir.bel.tr/api/ibb/cbs/otobusterminalleri";
+				HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+				if (response.IsSuccessStatusCode)
+				{
+					string content = await response.Content.ReadAsStringAsync();
+					var terminal = JsonConvert.DeserializeObject<Terminal>(content);
+
+					return View(terminal.onemliyer);
+				}
+				else
+				{
+					return View("Error");
+				}
+			}
+		}
 	}
 }
