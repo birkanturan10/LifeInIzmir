@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net;
+using TypeLayer.Cevre;
 using TypeLayer.Ulasim;
 
 namespace UI.Controllers
@@ -12,6 +13,7 @@ namespace UI.Controllers
 			return View();
 		}
 
+		//Ulaşım
 		public IActionResult Vapurİskeleleri()
 		{
             string json = new WebClient().DownloadString("https://openapi.izmir.bel.tr/api/izdeniz/iskeleler");
@@ -81,5 +83,13 @@ namespace UI.Controllers
 				}
 			}
 		}
-	}
+
+		//Çevre
+        public IActionResult SuUretimi()
+        {
+            string json = new WebClient().DownloadString("https://openapi.izmir.bel.tr/api/izsu/suuretiminindagilimi");
+            var su = JsonConvert.DeserializeObject<List<Su>>(json);
+            return View(su);
+        }
+    }
 }

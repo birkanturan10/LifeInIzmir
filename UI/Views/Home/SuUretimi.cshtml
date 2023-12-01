@@ -1,15 +1,15 @@
-﻿@model IEnumerable<TypeLayer.Ulasim.Vapur>
+﻿@model IEnumerable<TypeLayer.Cevre.Su>
 
 @{
-	Layout = null;
+    Layout = null;
 }
 
 <!DOCTYPE html>
 
 <html>
 <head>
-	<meta name="viewport" content="width=device-width" />
-	<title>Vapur İskeleleri</title>
+    <meta name="viewport" content="width=device-width" />
+    <title>Su Üretimi</title>
 	<!--Bootstrap Links-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
@@ -24,28 +24,32 @@
 	<!--Navbar-->
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-md  d-flex justify-content-center">
-			<a class="navbar-brand">İzmir'de Ulaşım - Vapur İskeleleri</a>
+			<a class="navbar-brand">İzmir'de Çevre - Su Üretimi</a>
 		</div>
 	</nav>
+	<!--Search Box-->
+	<div class="d-flex justify-content-center" style="margin:10px;">
+		Arama Kutucuğu:&nbsp;<input type="text" id="myinput" />
+	</div>
 	<!--Table-->
 	<div class="container">
 		<table class="table table-light">
 			<thead>
 				<tr>
-					<th>ID</th>
-					<th>İskele Adı</th>
-					<th>Aktif Mi?</th>
-					<th>Arabalı Vapur İskelesi Mi?</th>
+					<th>Üretim Kaynağı</th>
+					<th>Üretim Miktarı</th>
+					<th>Yıl</th>
+					<th>Ay</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody id="myTable">
 				@foreach (var item in Model)
 				{
 					<tr>
-						<td>@item.IskeleId</td>
-						<td>@item.Adi</td>
-						<td>@(item.AktifMi ? "Evet" : "Hayır")</td>
-						<td>@(item.ArabaliVapurIskelesiMi ? "Evet" : "Hayır")</td>
+						<td>@item.UretimKaynagi</td>
+						<td>@item.UretimMiktari</td>
+						<td>@item.Yil</td>
+						<td>@item.Ay</td>
 					</tr>
 				}
 			</tbody>
@@ -55,10 +59,18 @@
 </html>
 
 <script>
+	$(document).ready(function () {
+		$("#myinput").on("keyup", function () {
+			var value = $(this).val().toLowerCase();
+			$("#myTable tr").filter(function () {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			})
+		})
+	})
+</script>
+
+<script>
 	function openMainPage() {
 		window.open("/Home/Index", "_self");
 	}
 </script>
-
-
-
