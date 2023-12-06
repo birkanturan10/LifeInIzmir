@@ -1,0 +1,78 @@
+﻿@model IEnumerable<TypeLayer.Cevre.SuKesintileri>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Arıza Kaynaklı Su Kesintileri</title>
+	<!--Bootstrap Links-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	<!--ApiSheet.css-->
+	<link href="~/style_sheets/apisheet.css" rel="stylesheet" />
+	<!--jQuery-->
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+	<!--Main Page Button-->
+	<button id="bottone1" onclick="openMainPage()"><strong>Ana Sayfa</strong></button>
+	<!--Navbar-->
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-md  d-flex justify-content-center">
+			<a class="navbar-brand">İzmir'de Çevre - Arıza Kaynaklı Su Kesintileri</a>
+		</div>
+	</nav>
+	<!--Search Box-->
+	<div class="d-flex justify-content-center" style="margin:10px;">
+		Arama Kutucuğu:&nbsp;<input type="text" id="myinput" />
+	</div>
+	<!--Table-->
+	<div class="container">
+		<table class="table table-light">
+			<thead>
+				<tr>
+					<th>Kesinti Tarihi</th>
+					<th>İlçe</th>
+					<th>Mahalleler</th>
+					<th>Tip</th>
+					<th>Kesinti Süresi</th>
+				</tr>
+			</thead>
+			<tbody id="myTable">
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>@item.KesintiTarihi</td>
+						<td>@item.IlceAdi</td>
+						<td>@item.Mahalleler</td>
+						<td>@item.Tip</td>
+						<td>@item.KesintiSuresi</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
+
+<script>
+	$(document).ready(function () {
+		$("#myinput").on("keyup", function () {
+			var value = $(this).val().toLowerCase();
+			$("#myTable tr").filter(function () {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			})
+		})
+	})
+</script>
+
+<script>
+	function openMainPage() {
+		window.open("/Home/Index", "_self");
+	}
+</script>

@@ -91,5 +91,12 @@ namespace UI.Controllers
             var su = JsonConvert.DeserializeObject<List<Su>>(json);
             return View(su);
         }
-    }
+
+		public IActionResult ArizaKaynakliSuKesintileri()
+		{
+			string json = new WebClient().DownloadString("https://openapi.izmir.bel.tr/api/izsu/arizakaynaklisukesintileri");
+			var su_kesintileri = JsonConvert.DeserializeObject<List<SuKesintileri>>(json);
+			return View(su_kesintileri);
+		}
+	}
 }
