@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cevre\KuleAnitHeykel.cs" />
     <Compile Include="Cevre\Su.cs" />
     <Compile Include="Cevre\SuKesintileri.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

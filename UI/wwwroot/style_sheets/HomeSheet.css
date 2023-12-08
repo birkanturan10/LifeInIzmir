@@ -12,7 +12,7 @@ body {
     grid-template-rows: 200px 200px 200px;
     grid-template-columns: 200px 200px 200px;
     row-gap: 0px;
-    column-gap: 70px;
+    column-gap: 90px;
     justify-content: center;
     align-items: center;
 }

@@ -98,5 +98,26 @@ namespace UI.Controllers
 			var su_kesintileri = JsonConvert.DeserializeObject<List<SuKesintileri>>(json);
 			return View(su_kesintileri);
 		}
+
+		public async Task<IActionResult> KuleAnitveHeykeller()
+		{
+			using (HttpClient client = new HttpClient())
+			{
+				string apiUrl = "https://openapi.izmir.bel.tr/api/ibb/cbs/kuleanitveheykeller";
+				HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+				if (response.IsSuccessStatusCode)
+				{
+					string content = await response.Content.ReadAsStringAsync();
+					var kule_anit_heykel = JsonConvert.DeserializeObject<KuleAnitHeykel>(content);
+
+					return View(kule_anit_heykel.onemliyer);
+				}
+				else
+				{
+					return View("Error");
+				}
+			}
+		}
 	}
 }
