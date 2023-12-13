@@ -119,5 +119,27 @@ namespace UI.Controllers
 				}
 			}
 		}
+
+		public async Task<IActionResult> Muzeler()
+		{
+			using (HttpClient client = new HttpClient())
+			{
+				string apiUrl = "https://openapi.izmir.bel.tr/api/ibb/cbs/muzeler";
+				HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+				if (response.IsSuccessStatusCode)
+				{
+					string content = await response.Content.ReadAsStringAsync();
+					var muzeler = JsonConvert.DeserializeObject<Muze>(content);
+
+					return View(muzeler.onemliyer);
+				}
+				else
+				{
+					return View("Error");
+				}
+			}
+		}
+
 	}
 }
