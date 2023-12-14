@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System.Net;
 using TypeLayer.Cevre;
 using TypeLayer.Ulasim;
+using TypeLayer.Yasam;
 
 namespace UI.Controllers
 {
@@ -141,5 +142,26 @@ namespace UI.Controllers
 			}
 		}
 
-	}
+        //Yaşam
+        public async Task<IActionResult> SemtPazarYerleri()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                string apiUrl = "https://openapi.izmir.bel.tr/api/ibb/cbs/pazaryerleri";
+                HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+                    var pazarlar = JsonConvert.DeserializeObject<Pazar>(content);
+
+                    return View(pazarlar.onemliyer);
+                }
+                else
+                {
+                    return View("Error");
+                }
+            }
+        }
+    }
 }
