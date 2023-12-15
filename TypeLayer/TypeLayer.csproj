@@ -50,6 +50,7 @@
     <Compile Include="Ulasim\Taksi.cs" />
     <Compile Include="Ulasim\Terminal.cs" />
     <Compile Include="Ulasim\Vapur.cs" />
+    <Compile Include="Yasam\KulturSanat.cs" />
     <Compile Include="Yasam\Pazar.cs" />
   </ItemGroup>
   <ItemGroup />

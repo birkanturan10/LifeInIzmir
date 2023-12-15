@@ -163,5 +163,12 @@ namespace UI.Controllers
                 }
             }
         }
-    }
+
+		public IActionResult KulturSanatEtkinlikleri()
+		{
+			string json = new WebClient().DownloadString("https://openapi.izmir.bel.tr/api/ibb/kultursanat/etkinlikler");
+			var kultur_sanat = JsonConvert.DeserializeObject<List<KulturSanat>>(json);
+			return View(kultur_sanat);
+		}
+	}
 }
