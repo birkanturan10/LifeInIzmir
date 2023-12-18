@@ -52,6 +52,8 @@
     <Compile Include="Ulasim\Vapur.cs" />
     <Compile Include="Yasam\KulturSanat.cs" />
     <Compile Include="Yasam\Pazar.cs" />
+    <Compile Include="Yasam\Tarihi.cs" />
+    <Compile Include="Yasam\Universite.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

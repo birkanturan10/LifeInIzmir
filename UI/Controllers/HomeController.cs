@@ -170,5 +170,47 @@ namespace UI.Controllers
 			var kultur_sanat = JsonConvert.DeserializeObject<List<KulturSanat>>(json);
 			return View(kultur_sanat);
 		}
+
+		public async Task<IActionResult> TarihiYapilar()
+		{
+			using (HttpClient client = new HttpClient())
+			{
+				string apiUrl = "https://openapi.izmir.bel.tr/api/ibb/cbs/tarihiyapilar";
+				HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+				if (response.IsSuccessStatusCode)
+				{
+					string content = await response.Content.ReadAsStringAsync();
+					var tarihi = JsonConvert.DeserializeObject<Tarihi>(content);
+
+					return View(tarihi.onemliyer);
+				}
+				else
+				{
+					return View("Error");
+				}
+			}
+		}
+
+		public async Task<IActionResult> Universiteler()
+		{
+			using (HttpClient client = new HttpClient())
+			{
+				string apiUrl = "https://openapi.izmir.bel.tr/api/ibb/cbs/universiteler";
+				HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+				if (response.IsSuccessStatusCode)
+				{
+					string content = await response.Content.ReadAsStringAsync();
+					var universite = JsonConvert.DeserializeObject<Universite>(content);
+
+					return View(universite.onemliyer);
+				}
+				else
+				{
+					return View("Error");
+				}
+			}
+		}
 	}
 }
