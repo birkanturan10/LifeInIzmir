@@ -9,12 +9,13 @@ body {
 
 .container {
     display: grid;
-    grid-template-rows: 200px 200px 200px;
+    grid-template-rows: 200px 200px;
     grid-template-columns: 200px 200px 200px;
     row-gap: 0px;
     column-gap: 90px;
     justify-content: center;
     align-items: center;
+    padding-top:90px;
 }
 
 .box1 {
@@ -107,7 +108,5 @@ body {
     background-color:mediumpurple;
 }
 
-.tb{
-    padding-top:870px;
-}
+
 
